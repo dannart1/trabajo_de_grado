@@ -32,38 +32,55 @@
 
 	<!-- Footer -->
 	<link type='text/css' href="{% static 'css/footer.css' %}" rel="stylesheet" />
+
+    <!-- About us -->
+	<link type='text/css' href="{% static 'css/about-us.css' %}" rel="stylesheet" />
+
 </head>
 <body>
-	
-	{% block content %}
-    {% endblock %}
+    <!-- Main container -->
+	<main class="full-box main-container">
+		<!-- Nav lateral -->
+		<section class="full-box nav-lateral">
+			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
+			<div class="full-box nav-lateral-content">
+				<figure class="full-box nav-lateral-avatar">
+                    <img src="{% static 'logo/universidad.png' %}" class="img-fluid" alt="Avatar">
+					<figcaption class="roboto-medium text-center">
+						TRABAJO DE GRADO <br><small class="roboto-condensed-light"></small>
+					</figcaption>
+				</figure>
+				<div class="full-box nav-lateral-bar"></div>
+				<nav class="full-box nav-lateral-menu">
+					<ul>
+						<li>
+							<a href="{% url 'set_temperatura' %}"><i class="fab fas fas fa-chart-bar fa-fw"></i> &nbsp; Temperatura</a>
+						</li>
+
+						<li>
+							<a href="{% url 'set_humedad' %}" ><i class="fab fas fas fa-chart-bar fa-fw"></i> &nbsp; Humedad</a>
+						</li>
+
+						<li>
+							<a href="{% url 'set_conteo' %}"><i class="fas fas fa-camera-retro fa-fw"></i> &nbsp; Conteo de plantas </a>
+						</li>
+
+						<li>
+							<a href="{% url 'set_deteccion' %}"><i class="fas fas fa-camera-retro fa-fw"></i> &nbsp; Detección de enfermedades</a>
+						</li>
+
+						<li>
+							<a href="{% url 'set_about' %}" ><i class="fas fas fas fa-exclamation-circle fa-fw"></i> &nbsp; Acerca de nosotros</a>
+						</li>
+				</nav>
+			</div>
+		</section>
+
+        {% block content %} {% endblock %}
+    </main>
 </body>
-<footer >
-	<section style="height:80px;"></section>
-<!----------- Footer ------------>
-<footer class="footer-bs">
-    <div class="row">
-        <div class="col-md-3 footer-brand animated fadeInLeft">
-            <img src="{% static 'logo/universidad.png' %}" class="img-fluid" alt="Avatar">
-            <p>Universidad Católica de Colombia</p>
-        </div>
-        <div class="col-md-4 footer-nav animated fadeInUp">
-            <h4>Contacto </h4>
-            <div class="col-md-6">
-                <ul class="pages">
-                    <li><b>Camila Quintero Rojas</b> - cquintero98@ucatolica.edu.co</li>
-                    <li><b>Danna Catherine Rueda Torres</b> - dcrueda87@ucatolica.edu.co</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-2 footer-social animated fadeInDown">
-            <h4>Asesor de trabajo de grado</h4>
-            <ul>
-                <li><b> Zárate Ceballos</b></li>
-                <li>hzarate@ucatolica.edu.co</li>
-            </ul>
-        </div>
-    </div>
-</footer>
-</footer>
+
+	{% block footer %} 
+    {% endblock footer %}
+
 </html>

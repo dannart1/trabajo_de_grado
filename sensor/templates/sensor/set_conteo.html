@@ -1,0 +1,28 @@
+{% include 'sensor/base.html' %}
+{% include 'sensor/set_footer.html' %}
+{% include 'sensor/set_script.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page content -->
+<section class="full-box page-content">
+	<nav class="full-box navbar-info">
+		<a href="/" class="float-left show-nav-lateral">
+			<i class="fas fas fas fa-list"></i>
+		</a>
+	</nav>
+
+<!-- Page header -->
+<div class="full-box page-header">
+	<h3 id="titulo" class="text-left">
+		<b><i class="fas fas fa-camera-retro fa-fw"></i> &nbsp; CONTEO DE PLANTAS</b>
+	</h3>
+</div>
+			
+</section>
+	{% block footer %} 
+    {% endblock footer %}
+
+	{% block script %} {% endblock %}
+	
+{% endblock %}
