@@ -1,4 +1,7 @@
+import csv
 from django.shortcuts import render, HttpResponse
+
+from sensor.models import sensor
 
 
 
@@ -26,3 +29,17 @@ def set_footer(request):
 
 def set_script(request):
     return render(request, 'sensor/set_script.html', {})
+
+def download_csv(request):
+    response = HttpResponse(content_type="text/csv")
+    response['Content-Disposition'] = 'attachment; filename=Lectura.csv'
+    
+    writer = csv.writer(response)
+    writer.writerow(['id', 'IDSensor', 'Fecha', 'Hora', 'Temperatura', 'Humedad'])
+    
+    datos = sensor.objects.all()
+    
+    for i in datos:
+        writer.writerow([i.id, i.IDSensor, i.Fecha, i.Hora, i.Temperatura, i.Humedad])
+        
+    return response

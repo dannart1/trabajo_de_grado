@@ -9,4 +9,5 @@ urlpatterns = [
     path('set_deteccion/', views.set_deteccion, name='set_deteccion'),
     path('set_about/', views.set_about, name='set_about'),
     path('set_script/', views.set_about, name='set_script'),
+    path('download_csv', views.download_csv, name="download_csv"),
 ]
